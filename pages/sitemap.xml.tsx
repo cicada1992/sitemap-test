@@ -10,17 +10,17 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     const contents = sites
         .map(
             ({ path, date }) => `
-      <sitemap>
+      <url>
         <loc>${HOST}${path}</loc>
         <lastmod>${date}</lastmod>
-      </sitemap>
+      </url>
     `,
         )
         .join('');
     const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
-    <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${contents}
-    </sitemapindex>`;
+    </urlset>`;
 
     res.setHeader('Content-Type', 'application/xml');
     res.write(sitemapIndex);
