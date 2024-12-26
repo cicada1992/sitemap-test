@@ -4,9 +4,8 @@ const HOST = 'https://test.com'
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     const sites = [
-        { path: '/path-1', date: '2024-10-10' },
-        { path: '/path-2', date: '2024-10-10' },
-        { path: '/path-1', date: '2024-10-10' }
+        { path: '/path1', date: '2024-10-10' },
+        { path: '/path2', date: '2024-10-12' },
     ]
     const contents = sites
         .map(
