@@ -11,7 +11,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
         .map(
             ({ path, date }) => `
       <sitemap>
-        <loc>${HOST}/${path}</loc>
+        <loc>${HOST}${path}</loc>
         <lastmod>${date}</lastmod>
       </sitemap>
     `,
