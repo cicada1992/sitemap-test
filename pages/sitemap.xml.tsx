@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 
-const HOST = 'https://sitemap-test.vercel.app'
+const HOST = 'https://sitemap-yj.vercel.app'
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     const sites = [
