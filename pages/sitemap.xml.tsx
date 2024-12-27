@@ -7,9 +7,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     { path: "/path1", date: "2024-10-10" },
     { path: "/path2", date: "2024-10-12" },
   ];
-  console.log(sites);
 
-  const contents = []
+  const contents = sites
     .map(({ path, date }) =>
       `<url><loc>${HOST}${path}</loc><lastmod>${date}</lastmod></url>`.trim()
     )
