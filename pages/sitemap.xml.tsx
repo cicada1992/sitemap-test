@@ -13,13 +13,13 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       <url>
         <loc>${HOST}${path}</loc>
         <lastmod>${date}</lastmod>
-      </url>`,
+      </url>`.replace(/^\n+/, ''),
         )
         .join('');
     const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${contents}
-    </urlset>`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${contents}
+</urlset>`;
 
     res.setHeader('Content-Type', 'application/xml');
     res.write(sitemapIndex);
