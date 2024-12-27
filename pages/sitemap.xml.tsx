@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       <url>
         <loc>${HOST}${path}</loc>
         <lastmod>${date}</lastmod>
-      </url>`.replace(/^\n+/, ''),
+      </url>`,
         )
         .join('');
     const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
