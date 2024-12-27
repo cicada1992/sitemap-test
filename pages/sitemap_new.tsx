@@ -1,3 +1,5 @@
+import { GetServerSideProps } from "next";
+
 const HOST = "https://sitemap-yj.vercel.app";
 
 const insideXMLString = (xmlContent: string): string => {
@@ -7,11 +9,8 @@ const insideXMLString = (xmlContent: string): string => {
     </urlset>
   `;
 };
-export default function Sitemap() {
-  return null;
-}
 
-Sitemap.getInitialProps = async ({ res }: any) => {
+export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const sites = [
     { path: "/path1", date: "2024-10-10" },
     { path: "/path2", date: "2024-10-12" },
@@ -32,6 +31,9 @@ Sitemap.getInitialProps = async ({ res }: any) => {
   res.setHeader("Content-Type", "application/xml");
   res.write(xmlContents);
   res.end();
-
-  return {};
+  return { props: {} };
 };
+
+export default function SitemapIndex() {
+  return null;
+}
