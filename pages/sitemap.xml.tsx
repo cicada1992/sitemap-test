@@ -9,7 +9,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   ];
   console.log(sites);
 
-  const contents = []
+  const contents = sites
     .map(
       ({ path, date }) => `
       <sitemap>
