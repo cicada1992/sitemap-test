@@ -3,10 +3,11 @@ import { GetServerSideProps } from "next";
 const HOST = "https://sitemap-yj.vercel.app";
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const sites = [
-    { path: "/path1", date: "2024-10-10" },
-    { path: "/path2", date: "2024-10-12" },
-  ];
+  //   const sites = [
+  //     { path: "/path1", date: "2024-10-10" },
+  //     { path: "/path2", date: "2024-10-12" },
+  //   ];
+  const sites = [];
 
   const contents = sites
     .map(
