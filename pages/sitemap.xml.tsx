@@ -15,7 +15,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       <sitemap>
         <loc>${HOST}${path}</loc>
         <lastmod>${date}</lastmod>
-      </sitemap>`
+      </sitemap>
+    `
     )
     .join("");
   const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
