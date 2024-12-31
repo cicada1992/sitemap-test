@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import dayjs from "dayjs";
 
 const HOST = "https://sitemap-yj.vercel.app";
 
@@ -12,8 +13,8 @@ const getXMLContents = (xmlContent: string): string => {
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const sites = [
-    { path: "/path1", date: "2024-10-10" },
-    { path: "/path2", date: "2024-10-12" },
+    { path: "/iphone", date: dayjs(Date.now()).format('YYYY-MM-DD') },
+    { path: "/galaxy", date: "2024-10-12" },
   ];
   let pagesXML = "";
   for (const { path, date } of sites) {
